@@ -1,12 +1,13 @@
 import React from 'react';
 // import './App.css'; // Estilos
-import logo from './logo1.png';
+import './stylesLandingPage.css'; // Importa el archivo CSS
+import logo from './Logo dorado.png';
 import step from './logo2.png';
 function App() {
   return (
-    <div className="App"><img src = {logo} alt="Logo de la aplicación" />
+    <div className="App">
       <header>
-       
+      <img src={logo} alt="Logo de la aplicación" />
         <nav>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
