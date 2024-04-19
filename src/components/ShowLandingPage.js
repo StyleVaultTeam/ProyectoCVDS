@@ -3,6 +3,10 @@ import React from 'react';
 import './stylesLandingPage.css'; // Importa el archivo CSS
 import logo from './Logo dorado.png';
 import step from './logo2.png';
+import Slider from './Slider/Slider.js';
+import Camisetas from './ImagesClothes/camisetas';
+import Pantalones from './ImagesClothes/pantalones.js';
+
 function App() {
   return (
     <div className="App">
@@ -41,6 +45,14 @@ function App() {
           </div>
         </div>
       </section>
+            
+      {/* Add by JParroquiano */}
+      <section id="mi-armario" className='my-closet'>
+        <h2>Mi armario</h2>
+        <Slider arregloImagenes={Camisetas}/>
+        <Slider arregloImagenes={Pantalones}/>
+      </section>
+
       <section id="caracteristicas" className="features-section">
         <h2>Características</h2>
         <ul>
