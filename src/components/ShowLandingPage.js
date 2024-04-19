@@ -6,6 +6,7 @@ import step from './logo2.png';
 import Slider from './Slider/Slider.js';
 import Camisetas from './ImagesClothes/camisetas';
 import Pantalones from './ImagesClothes/pantalones.js';
+import Gorras from './ImagesClothes/gorras.js';
 
 function App() {
   return (
@@ -49,8 +50,9 @@ function App() {
       {/* Add by JParroquiano */}
       <section id="mi-armario" className='my-closet'>
         <h2>Mi armario</h2>
+        <Slider arregloImagenes={Gorras}/>
         <Slider arregloImagenes={Camisetas}/>
-        <Slider arregloImagenes={Pantalones}/>
+        <Slider arregloImagenes={Pantalones}/>        
       </section>
 
       <section id="caracteristicas" className="features-section">
