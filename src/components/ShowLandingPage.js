@@ -91,9 +91,9 @@ function App() {
                 <p><i className="fas fa-phone"></i> +3143692005</p>
               </div>
               <div className="socials">
-                <a href="#"><i className="fab fa-facebook"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
+                <a href="#inicio"><i className="fab fa-facebook"></i></a>
+                <a href="#inicio"><i className="fab fa-twitter"></i></a>
+                <a href="#inicio"><i className="fab fa-instagram"></i></a>
               </div>
             </div>
           </div>
