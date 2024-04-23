@@ -10,7 +10,6 @@ function Slider({ arregloImagenes }) {
                     <motion.div className="item" key={index}>
                         <img src={image} alt="" />
                             <div className="informacion">
-                                <h1></h1>
                             </div>
                     </motion.div>    
                 ))}
