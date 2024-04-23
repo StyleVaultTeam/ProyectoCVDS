@@ -3,7 +3,9 @@ import image2 from "../ImagesClothes/Camiseta_Rosa_.png";
 import image3 from "../ImagesClothes/CamisetaNegra.png";
 import image4 from "../ImagesClothes/Camiseta_Blanca.png"; 
 import image5 from "../ImagesClothes/camiseta-azul.png";
+import image6 from "../ImagesClothes/camiseta-azul.png";
+import image7 from "../ImagesClothes/camiseta-azul.png";
 
-const camisetasImages = [image1, image2, image3, image4, image5];
+const camisetasImages = [image1, image2, image3, image4, image5, image6, image7];
 
 export default camisetasImages;
