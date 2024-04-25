@@ -28,27 +28,6 @@ function App() {
             <img src={step} alt="Paso 2" />
             <p>Organízalas por categorías</p>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2 active" aria-current="page" href="#inicio">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="#como-funciona">Cómo Funciona</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="#caracteristicas">Características</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="#testimonios">Testimonios</a>
-              </li>
-            </ul>
-          </div>
-          {/*<a href="#" class="login-button">Login</a>*/}
-            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
       </section>      
       {/* Add by JParroquiano */}
