@@ -28,6 +28,10 @@ function App() {
             <img src={step} alt="Paso 2" />
             <p>Organízalas por categorías</p>
           </div>
+         <div className="step">
+            <img src={step} alt="Paso 3" />
+            <p>Crea conjuntos fácilmente</p>
+          </div>
         </div>
       </section>      
       {/* Add by JParroquiano */}
