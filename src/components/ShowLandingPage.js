@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+//import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // import './App.css'; // Estilos
 import './stylesLandingPage.css'; // Importa el archivo CSS
 import logo from './Logo dorado.png';
@@ -13,9 +12,9 @@ import Gorras from './ImagesClothes/gorras.js';
 
 function App() {
 
-  const openMyCloset = () => {
+  /*const openMyCloset = () => {
     const pantalla = <MyCloset />;
-  };
+  };*/
 
   return (
     <div className="App">
@@ -60,9 +59,9 @@ function App() {
         </div>
       </div>
     </nav>
-
+      {/*
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-      
+  */}
       </header>
 
       <body>      
