@@ -1,4 +1,50 @@
 /* Estilos generales */
+
+.login-button:hover {
+  background-color: #00b383;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+}
+
+/*.nav-link:hover, .nav-link.active {
+  color: #000;
+}*/
+
+@media (min-width: 991px) {
+  .nav-link::before{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #009970;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before, .nav-link.active::before {
+      width: 100%;
+      visibility: visible;
+  }
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,7 +89,7 @@ body {
   }
   
   header nav ul li a:hover {
-    background-color: #555;
+    /*background-color: #555;*/
     border-radius: 5px;
   }
   
@@ -131,7 +177,7 @@ body {
     background-color: #fff; /* Fondo blanco */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: left;
+    text-align: center;
     margin: 10px; /* Espacio entre cada caja */
   }
   
