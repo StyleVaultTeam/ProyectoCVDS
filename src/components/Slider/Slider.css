@@ -1,7 +1,31 @@
+
+
+
 .slider-container{
-    margin: 0 auto;
+    
+    box-shadow: 0px 0px 10px 0px rgba(201, 199, 199, 0.75);
+    /*ackground-color: #eceef0;*/
+    /*border-radius: 20px;*/
+    justify-content: center;
+    gap: 4rem;
+    display: flex;
+    object-fit: cover;
+    padding: 1rem;
+
+    /*margin: 0 auto;
+    align-items: center;
+    --size: 256px;
+    display: flex;
+    gap: 1rem;
     /*overflow: hidden;*/
     /*border: 1px solid red;*/
+    
+}
+
+.slider-container>motion.div{
+    /*box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+    background-color: #2D4263;
+    border-radius: 20px;*/
 }
 
 .slider{
@@ -10,14 +34,83 @@
 }
 
 .item{
-    height: 20rem;
+    /*height: 20rem;*/
+    height: auto;
+    width: auto;
     max-width: auto;
     padding: 1rem;
+    object-fit: cover;
 }
 
 .item img{
     height: 100%;
     width: 100%;
     pointer-events: none;
-    position: center;
+    /*position: center;*/
+    object-fit: cover;
+    border-radius: 5px 5px 0px 0px;
+    /*border-radius: 5px;*/
+    
 }
+
+.item img>div{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    background-color: #2D4263;
+    border-radius: 20px;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.rating{
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);*/
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: #ccc;    
+}
+
+.rating label ::before{
+    content: '\f005';
+    font-family: fontawesome;
+    position: relative;
+    display: block;
+    font-size: 10px;
+    color: #101010;
+}
+
+.rating label :after{
+    /*content: '\f005';*/ /*figura de estrelle*/
+    content: '\F586';
+    font-family: fontawesome;
+    position: absolute;
+    display: block;
+    font-size: 10px;
+    color: #1f9cff;
+    top: 0;
+    opacity: 1;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~ label::after{ 
+    opacity: 1;
+}
+
