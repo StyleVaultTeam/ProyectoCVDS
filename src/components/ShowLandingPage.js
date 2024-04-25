@@ -1,27 +1,15 @@
 import React from 'react';
-// import './App.css'; // Estilos
 import './stylesLandingPage.css'; // Importa el archivo CSS
-import logo from './Logo dorado.png';
 import step from './logo2.png';
 import Slider from './Slider/Slider.js';
 import Camisetas from './ImagesClothes/camisetas';
 import Pantalones from './ImagesClothes/pantalones.js';
 import Gorras from './ImagesClothes/gorras.js';
+import Footer from './Reusable/Footer.js';
 
 function App() {
   return (
     <div className="App">
-      <header>
-      <img src={logo} alt="Logo de la aplicación" />
-        <nav>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#como-funciona">Cómo Funciona</a></li>
-            <li><a href="#caracteristicas">Características</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-          </ul>
-        </nav>
-      </header>
       <section id="inicio" className="hero-section">
         <div className="hero-content">
           <h1>Organiza tu armario virtualmente</h1>
@@ -76,32 +64,7 @@ function App() {
         </ul>
       </section>
       {/* Sección de Testimonios */}
-      {/* Pie de página */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section about">
-              <h2>Sobre Nosotros</h2>
-              <p>Grupo de estudiantes de la carrera de Ingenieria de Sistemas de la Escuela Colombiana de Ingenieria.</p>
-            </div>
-            <div className="footer-section contact">
-              <h2>Contacto</h2>
-              <div className="contact-info">
-                <p><i className="fas fa-envelope"></i> styleVault@mail.com</p>
-                <p><i className="fas fa-phone"></i> +3143692005</p>
-              </div>
-              <div className="socials">
-                <a href="#"><i className="fab fa-facebook"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          &copy; 2024 StyleVault | Todos los derechos reservados
-        </div>
-      </footer>
+      <Footer />
       <script src="app.js"></script>
     </div>
   );
