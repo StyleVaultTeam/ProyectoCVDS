@@ -10,10 +10,6 @@ import Footer from './Reusable/Footer.js';
 
 function App() {
 
-  const openMyCloset = () => {
-    const pantalla = <MyCloset />;
-  };
-
   return (
     <div className="App">
       <section id="inicio" className="hero-section">
