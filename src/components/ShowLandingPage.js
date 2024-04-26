@@ -7,6 +7,8 @@ import Slider from './Slider/Slider.js';
 import Camisetas from './ImagesClothes/camisetas';
 import Pantalones from './ImagesClothes/pantalones.js';
 import Gorras from './ImagesClothes/gorras.js';
+import LoginForm from './LoginForm/Login.jsx';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
             <li><a href="#como-funciona">Cómo Funciona</a></li>
             <li><a href="#caracteristicas">Características</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#login">Login</a></li>
           </ul>
         </nav>
       <link rel="preconnect" href="https://fonts.googleapis.com" />  
@@ -30,8 +33,11 @@ function App() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-
+        
       </header>
+      <section id="login" className="login-section">
+        <LoginForm />
+      </section>
       <section id="inicio" className="hero-section">
         <div className="hero-content">
           <h1>Organiza tu armario virtualmente</h1>
