@@ -1,10 +1,6 @@
 import React from 'react';
 import './stylesLandingPage.css'; // Importa el archivo CSS
 import step from './logo2.png';
-import Slider from './Slider/Slider.js';
-import Camisetas from './ImagesClothes/camisetas';
-import Pantalones from './ImagesClothes/pantalones.js';
-import Gorras from './ImagesClothes/gorras.js';
 import Footer from './Reusable/Footer.js';
 
 
