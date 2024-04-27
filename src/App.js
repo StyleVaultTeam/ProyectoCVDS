@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ShowLandingPage from './components/ShowLandingPage';
 import ShoppingPage from './components/ShoppingPage';
 import Header from './components/Reusable/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OutfitsStylesReferences from './components/OutfitsStylesReferences/OutfitsStylesReferences';
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('landing');
-
-  const navigateToShoppingPage = () => {
-    setCurrentPage('shopping');
-  };
-
-  const navigateToLandingPage = () => {
-    setCurrentPage('landing');
-  };
-
   return (
-    <div>
-      <Header navigateToShoppingPage={navigateToShoppingPage} navigateToLandingPage={navigateToLandingPage} />
-      {currentPage === 'landing' && <ShowLandingPage onNavigate={navigateToShoppingPage} />}
-      {currentPage === 'shopping' && <ShoppingPage onNavigate={navigateToLandingPage} />}
-    </div>
+    <BrowserRouter>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossOrigin="anonymous"></link>
+      <Header />
+      <Routes>
+        <Route path="/">
+          <Route index element={<ShowLandingPage />} />
+          <Route path="shopping" element={<ShoppingPage />} />
+          <Route path="styles" element={<OutfitsStylesReferences />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin="anonymous"></script>
+    </BrowserRouter>
   );
 }
 
