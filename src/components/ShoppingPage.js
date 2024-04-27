@@ -3,6 +3,8 @@ import './stylesShoppingPage.css';
 import Footer from './Reusable/Footer.js';
 import camisetaBlancaImage from './ImagesClothes/Camiseta_Blanca.png'
 import gorraNegraImage from './ImagesClothes/gorraNegra.png'
+import gorraAmarillaImage from './ImagesClothes/gorraAmarilla.png'
+import gorraRosaImage from './ImagesClothes/gorraRosa.png'
 import pantalonTrainImage from './ImagesClothes/Pantalon_Train.png'
 
 function ShoppingPage() {
@@ -21,13 +23,12 @@ function ShoppingPage() {
     setCart(newCart);
   };
 
-  // Lista de productos de ejemplo
   const products = [
-    { id: 1, name: 'Camiseta', price: 25, image: camisetaBlancaImage },
-    { id: 2, name: 'Pantalón', price: 40, image: pantalonTrainImage },
-    { id: 3, name: 'Gorra', price: 30, image: gorraNegraImage },
-    { id: 4, name: 'Gorra2', price: 30, image: gorraNegraImage },
-    { id: 5, name: 'Gorra3', price: 30, image: gorraNegraImage }
+    { id: 1, name: 'Camiseta', price: 25000, image: camisetaBlancaImage },
+    { id: 2, name: 'Pantalón', price: 40000, image: pantalonTrainImage },
+    { id: 3, name: 'Gorra Negra', price: 30000, image: gorraNegraImage },
+    { id: 4, name: 'Gorra Amarilla', price: 30000, image: gorraAmarillaImage },
+    { id: 5, name: 'Gorra Rosa', price: 30000, image: gorraRosaImage }
   ];
 
   // Función para calcular el total de la compra
