@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './Logo dorado.png';
 import './stylesHeader.css'
 
-function Header({ }) {
+function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg ">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ShowLandingPage from './components/ShowLandingPage';
 import ShoppingPage from './components/ShoppingPage';
 import Header from './components/Reusable/Header';
