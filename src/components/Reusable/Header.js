@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './Logo dorado.png';
 import './stylesHeader.css'
 
-function Header() {
+function Header({navigateToLogin}) {
   return (
     <header>
       <nav className="navbar navbar-expand-lg ">
@@ -39,10 +39,14 @@ function Header() {
                     Ir a la página de compras
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link mx-lg-2" href="/login" >
+                    Login
+                  </a>
+                </li>
               </ul>
             </div>
 
-            {/*<a href="#" className="login-button">Login</a>*/}
             <button className="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
               aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

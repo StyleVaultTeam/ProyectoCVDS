@@ -7,6 +7,9 @@ import MyCloset from './components/MyCloset/MyCloset';
 import OutfitsStylesReferences from './components/OutfitsStylesReferences/OutfitsStylesReferences';
 import RecommendationSection from './components/RecommendationSection/RecommendationSection';
 import NotFound from './components/NotFound/NotFound'
+import PhotoUploadScreen from './components/PhotoUploadScreen';
+import LoginVault from  './components/LoginForm/LoginVault';
+import ImageGallery from './components/ChargeImages';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="recommendation" element={<RecommendationSection />} />
           <Route path="myCloset" element={<MyCloset />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="uploads" element={<PhotoUploadScreen/>} />
+          <Route path="login" element={<LoginVault/>} />
+          <Route path="charge" element={<ImageGallery/>} />
         </Route>
       </Routes>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin="anonymous"></script>
