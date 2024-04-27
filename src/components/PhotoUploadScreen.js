@@ -77,7 +77,6 @@ function PhotoUploadScreen() {
       }
     } catch (error) {
       console.error('Upload error:', error);
-      setUploadError('An error occurred during upload.');
     } finally {
       setIsUploading(false);
     }
