@@ -3,7 +3,9 @@ import ShowLandingPage from './components/ShowLandingPage';
 import ShoppingPage from './components/ShoppingPage';
 import Header from './components/Reusable/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyCloset from './components/MyCloset/MyCloset';
 import OutfitsStylesReferences from './components/OutfitsStylesReferences/OutfitsStylesReferences';
+import RecommendationSection from './components/RecommendationSection/RecommendationSection';
 import NotFound from './components/NotFound/NotFound'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route index element={<ShowLandingPage />} />
           <Route path="shopping" element={<ShoppingPage />} />
           <Route path="styles" element={<OutfitsStylesReferences />} />
+          <Route path="recommendation" element={<RecommendationSection />} />
+          <Route path="myCloset" element={<MyCloset />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

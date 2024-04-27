@@ -6,7 +6,7 @@ import Camisetas from './ImagesClothes/camisetas';
 import Pantalones from './ImagesClothes/pantalones.js';
 import Gorras from './ImagesClothes/gorras.js';
 import Footer from './Reusable/Footer.js';
-import OutfitsStylesReferences from './OutfitsStylesReferences/OutfitsStylesReferences.js';
+
 
 function App() {
 
@@ -24,29 +24,40 @@ function App() {
         <div className="steps">
           <div className="step">
             <img src={step} className="img-fluid" alt="Paso 1" />
-            <p>Fotografía tus prendas</p>
+            <li className="nav-item">
+              <a className="nav-link mx-lg-2" href="/myCloset" >
+                Mi armario
+              </a>
+            </li>
           </div>
           <div className="step">
             <img src={step} className="img-fluid" alt="Paso 2" />
-            <p>Organízalas por categorías</p>
+            <li className="nav-item">
+              <a className="nav-link mx-lg-2" href="/styles" >
+                Organízalas por estilos
+              </a>
+            </li>
           </div>
-         <div className="step">
+
+          <div className="step">
             <img src={step} className="img-fluid" alt="Paso 3" />
-            <p>Crea conjuntos fácilmente</p>
+            <li className="nav-item">
+              <a className="nav-link mx-lg-2" href="/recommendation" >
+                Sección de recomendaciones
+              </a>
+            </li>
           </div>
         </div>
-      </section>  
+      </section>
 
-      {/* Add by JParroquiano */}
+      {/* Add by JParroquiano 
       <section id="mi-armario" className='my-closet'>
         <h2>Mi armario</h2>
-        <Slider arregloImagenes={Gorras}/>
-        <Slider arregloImagenes={Camisetas}/>
-        <Slider arregloImagenes={Pantalones}/>        
-      </section>
-      <section>
-        <OutfitsStylesReferences />
-      </section>
+        <Slider arregloImagenes={Gorras} />
+        <Slider arregloImagenes={Camisetas} />
+        <Slider arregloImagenes={Pantalones} />
+      </section>*/}
+
       <section id="caracteristicas" className="features-section">
         <h2>Características</h2>
         <ul>
@@ -71,7 +82,7 @@ function App() {
       {/* Sección de Testimonios */}
       <Footer />
       <script src="app.js"></script>
-    </div>  
+    </div>
   );
 }
 

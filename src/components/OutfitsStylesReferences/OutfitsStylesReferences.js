@@ -17,7 +17,7 @@ import oversize3 from '../OutfitsStylesReferences/oversize3.jpg';
 
 function OutfitsStylesReferences (){
 
-    const[activeTab, setActiveTab] = useState("0");
+    const[activeTab, setActiveTab] = useState("1");
 
     const cambiarTab = (numeroTab) =>{
         if(activeTab !== numeroTab){
@@ -59,7 +59,7 @@ function OutfitsStylesReferences (){
 
                 <TabContent activeTab={activeTab}>
                     <TabPane tabId="1">
-                        <div className="container">
+                        <div className="outfitContainer">
                             <span className="slider" id="slider1"></span>
                             <span className="slider" id="slider2"></span>
                             <span className="slider" id="slider3"></span>
@@ -85,7 +85,7 @@ function OutfitsStylesReferences (){
                     </TabPane>
 
                     <TabPane tabId="2">
-                        <div className="container">
+                        <div className="outfitContainer">
                             <span className="slider" id="slider4"></span>
                             <span className="slider" id="slider5"></span>
                             <span className="slider" id="slider6"></span>
@@ -111,7 +111,7 @@ function OutfitsStylesReferences (){
                     </TabPane>
 
                 <TabPane tabId="3">
-                    <div className='container'>
+                    <div className='outfitContainer'>
                         <span className="slider" id="slider7"></span>
                         <span className="slider" id="slider8"></span>
                         <span className="slider" id="slider9"></span>
@@ -135,7 +135,7 @@ function OutfitsStylesReferences (){
                 </TabPane>
 
                 <TabPane tabId="4">
-                    <div className='container'>
+                    <div className='outfitContainer'>
                     <span className="slider" id="slider10"></span>
                         <span className="slider" id="slider11"></span>
                         <span className="slider" id="slider12"></span>
