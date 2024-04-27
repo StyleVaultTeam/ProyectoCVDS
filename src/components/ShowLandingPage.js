@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <section id="inicio" className="hero-section">
-        <div class="container-fluid d-flex align-items-center fs-1 flex-column" className="hero-content">
+        <div className="container-fluid d-flex align-items-center fs-1 flex-column hero-content">
           <h1>Organiza tu armario virtualmente</h1>
           <p>Mantén tu guardarropa organizado y a mano en todo momento.</p>
         </div>
@@ -23,15 +23,15 @@ function App() {
         <h2>Cómo Funciona</h2>
         <div className="steps">
           <div className="step">
-            <img src={step} class="img-fluid" alt="Paso 1" />
+            <img src={step} className="img-fluid" alt="Paso 1" />
             <p>Fotografía tus prendas</p>
           </div>
           <div className="step">
-            <img src={step} class="img-fluid" alt="Paso 2" />
+            <img src={step} className="img-fluid" alt="Paso 2" />
             <p>Organízalas por categorías</p>
           </div>
          <div className="step">
-            <img src={step} class="img-fluid" alt="Paso 3" />
+            <img src={step} className="img-fluid" alt="Paso 3" />
             <p>Crea conjuntos fácilmente</p>
           </div>
         </div>
@@ -68,9 +68,6 @@ function App() {
           </li>
         </ul>
       </section>
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
       {/* Sección de Testimonios */}
       <Footer />
       <script src="app.js"></script>
