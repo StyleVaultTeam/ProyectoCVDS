@@ -1,10 +1,15 @@
 /* Encabezado */
 header {
     background-color: #333;
-    
-    /*justify-content: space-between;*/
+    justify-content: space-between;
     justify-content: center;
     align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    color: #ffffff; /* Cambia el color del texto a blanco */
+    font-weight: bold; /* Opcional: cambia el peso de la fuente a negrita */
+    font-size: 20px; /* Tamaño de la fuente */
   }
   
   header .logo img {
@@ -28,34 +33,19 @@ header {
     margin-left: 0;
   }
   
-  header nav ul li a {
-    color: #ffffff;
+  /* Estilos para los enlaces */
+  header nav ul li a,
+  header nav ul button {
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s ease;
+    color: #ffffff; /* Color del texto */
   }
   
-  header nav ul li a:hover {
-    /*background-color: #555;*/
-    border-radius: 5px;
-  }
-
-  header nav ul button {
-    background-color: #333;
-    color: #ffffff;
-    /*color: #fff;*/
-    /*padding: 10px;*/
-    /*color: #666777;*/
-    /*font-weight: 500;*//*ancho de letra*/ 
-    /*position: relative;*/
-    border: none;
-    /*font-size: 16px;*/
-    /*cursor: pointer;*/
-    /*margin-left: 25px;*/
-  }
-
+  /* Estilos para los enlaces al pasar el ratón */
+  header nav ul li a:hover,
   header nav ul button:hover {
-    /*background-color: #555;
-    border-radius: 5px;*/
-      
+    background-color: #ffffff; /* Cambia el fondo al pasar el ratón */
+    color: #333; /* Cambia el color del texto */
+    border-radius: 5px; /* Agrega bordes redondeados */
   }

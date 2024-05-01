@@ -14,6 +14,7 @@ import punk3 from '../OutfitsStylesReferences/punk3.jpg';
 import oversize1 from '../OutfitsStylesReferences/oversize1.jpg';
 import oversize2 from '../OutfitsStylesReferences/oversize2.jpg';
 import oversize3 from '../OutfitsStylesReferences/oversize3.jpg';
+import Footer from '../Reusable/Footer.js';
 
 function OutfitsStylesReferences (){
 
@@ -26,11 +27,9 @@ function OutfitsStylesReferences (){
     } 
 
     return (
+    <div>
       <div className='OutfitsStylesReferences'>
-
           <body className='outfitBody'>
-
-
               <Nav tabs>
                 <NavItem>
                     <NavLink className={(activeTab==="1" ? "activeTab baseTab" : "baseTab")} onClick={()=>cambiarTab("1")}>
@@ -65,7 +64,6 @@ function OutfitsStylesReferences (){
                             <span className="slider" id="slider3"></span>
 
                             <div className="imgContainer">
-
                                 <div className="slide_div" id="slide_1">
                                     <img src={rock1} alt="" className="outfitImg" id="img1" />
                                     <a href="#slider1" className="button" id="button1"> </a>
@@ -78,7 +76,6 @@ function OutfitsStylesReferences (){
                                     <img src={rock3} alt="" className="outfitImg" id="img3" />
                                     <a href="#slider3" className="button" id="button3"> </a>
                                 </div>
-
                             </div>
 
                         </div>
@@ -91,7 +88,6 @@ function OutfitsStylesReferences (){
                             <span className="slider" id="slider6"></span>
 
                             <div className="imgContainer">
-
                                 <div className="slide_div" id="slide_4">
                                     <img src={classic1} alt="" className="outfitImg" id="img4" />
                                     <a href="#slider4" className="button" id="button4"> </a>
@@ -104,7 +100,6 @@ function OutfitsStylesReferences (){
                                     <img src={classic3} alt="" className="outfitImg" id="img6" />
                                     <a href="#slider6" className="button" id="button6"> </a>
                                 </div>
-
                             </div>
 
                         </div>
@@ -117,7 +112,6 @@ function OutfitsStylesReferences (){
                         <span className="slider" id="slider9"></span>
 
                         <div className="imgContainer">
-
                             <div className="slide_div" id="slide_7">
                                     <img src={punk1} alt="" className="outfitImg" id="img7" />
                                     <a href="#slider7" className="button" id="button7"> </a>
@@ -141,7 +135,6 @@ function OutfitsStylesReferences (){
                         <span className="slider" id="slider12"></span>
 
                         <div className="imgContainer">
-
                             <div className="slide_div" id="slide_10">
                                     <img src={oversize1} alt="" className="outfitImg" id="img10" />
                                     <a href="#slider10" className="button" id="button10"> </a>
@@ -158,9 +151,10 @@ function OutfitsStylesReferences (){
                     </div>
                 </TabPane>
             </TabContent>
-   
           </body>
       </div>
+      <Footer />
+    </div>
     );
 };
 

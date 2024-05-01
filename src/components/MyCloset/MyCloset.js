@@ -4,9 +4,11 @@ import Slider from '../Slider/Slider.js';
 import Camisetas from '../ImagesClothes/camisetas';
 import Pantalones from '../ImagesClothes/pantalones.js';
 import Gorras from '../ImagesClothes/gorras.js';
+import Footer from '../Reusable/Footer.js';
 
 function myCloset (){
   return (
+    <div>
     <div className="myCloset">
       <header>
       </header>
@@ -18,6 +20,8 @@ function myCloset (){
           <Slider arregloImagenes={Pantalones} />
         </div>
       </body>
+    </div>
+    <Footer />
     </div>
   );
 };

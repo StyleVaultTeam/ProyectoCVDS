@@ -1,88 +1,43 @@
-.container {
+.shopping-page {
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Agrega estilos al título */
+.shopping-page h2 {
+  font-size: 60px; /* Ajusta el tamaño de la fuente */
+  color: #333; /* Cambia el color del texto */
+  margin-bottom: 30px; /* Aumenta el espacio entre el título y los botones */
+}
+
+.category-links {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Estilos para el contenedor de productos */
-.products-container {
-  flex: 1; /* El contenedor de productos ocupará todo el espacio disponible */
-  margin-right: 20px; /* Margen derecho para separar del carrito */
+.category-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px; /* Aumenta el margen para separar más los botones */
+  padding: 20px 40px; /* Aumenta el espacio interno del botón */
+  background-color: #6f7e8f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px; /* Aumenta el radio de borde para hacer los botones más redondeados */
+  font-size: 48px; /* Aumenta el tamaño de fuente de los botones */
+  transition: background-color 0.3s ease;
 }
 
-/* Estilos para la lista de productos */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 30px;
-    padding: 60px;
-  }
-  
-  .product {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    background-color: #f9f9f9;
-    flex: 1;
-  }
-  
-  .product h3 {
-    margin-top: 0;
-    font-size: 20px;
-  }
+.category-link img {
+  width: 480px; /* Ajusta el tamaño de las imágenes */
+  height: 300px;
+  margin-bottom: 20px; /* Aumenta el espacio entre la imagen y el texto */
+}
 
-  .product img {
-    margin-bottom: 10px;
-    width: 200px; /* Establece un ancho máximo para las imágenes */
-    height: 175px; /* Permite que la altura se ajuste automáticamente según el ancho */
-  }
-  
-  .product p {
-    margin-bottom: 7px;
-  }
-  
-  .product button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .product button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilos para el carrito de compras */
-  .cart {
-    width: 300px; /* Tamaño deseado del carrito */
-    margin-left: 20px; /* Margen para separar del contenido principal */
-  }
-  
-  .cart h2 {
-    margin-bottom: 10px;
-  }
-  
-  .cart ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .cart li {
-    margin-bottom: 12px;
-  }
-
-  .cart ul li button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-
-  .cart ul li button:hover {
-    background-color: #0056b3;
-  }
+.category-link:hover {
+  background-color: #404a53;
+}

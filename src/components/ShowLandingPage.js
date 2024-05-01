@@ -3,7 +3,6 @@ import './stylesLandingPage.css'; // Importa el archivo CSS
 import step from './logo2.png';
 import Footer from './Reusable/Footer.js';
 
-
 function App() {
 
   return (
@@ -45,14 +44,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Add by JParroquiano 
-      <section id="mi-armario" className='my-closet'>
-        <h2>Mi armario</h2>
-        <Slider arregloImagenes={Gorras} />
-        <Slider arregloImagenes={Camisetas} />
-        <Slider arregloImagenes={Pantalones} />
-      </section>*/}
 
       <section id="caracteristicas" className="features-section">
         <h2>Características</h2>

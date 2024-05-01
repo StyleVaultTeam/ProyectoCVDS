@@ -1,70 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './stylesShoppingPage.css';
 import Footer from './Reusable/Footer.js';
-import camisetaBlancaImage from './ImagesClothes/Camiseta_Blanca.png'
-import gorraNegraImage from './ImagesClothes/gorraNegra.png'
-import gorraAmarillaImage from './ImagesClothes/gorraAmarilla.png'
-import gorraRosaImage from './ImagesClothes/gorraRosa.png'
-import pantalonTrainImage from './ImagesClothes/Pantalon_Train.png'
+import zaraImage from './ImagesLogos/zara.jpg';
+import hmImage from './ImagesLogos/H&M.jpg';
+import amazonImage from './ImagesLogos/amazon.jpg';
+import asosImage from './ImagesLogos/asos.jpg';
+import mangoImage from './ImagesLogos/mango.jpg';
 
 function ShoppingPage() {
-  // Estado para almacenar los productos en el carrito de compras
-  const [cart, setCart] = useState([]);
-
-  // Función para agregar un producto al carrito de compras
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
-  // Función para eliminar un producto del carrito de compras
-  const removeFromCart = (index) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    setCart(newCart);
-  };
-
-  const products = [
-    { id: 1, name: 'Camiseta', price: 25000, image: camisetaBlancaImage },
-    { id: 2, name: 'Pantalón', price: 40000, image: pantalonTrainImage },
-    { id: 3, name: 'Gorra Negra', price: 30000, image: gorraNegraImage },
-    { id: 4, name: 'Gorra Amarilla', price: 30000, image: gorraAmarillaImage },
-    { id: 5, name: 'Gorra Rosa', price: 30000, image: gorraRosaImage }
-  ];
-
-  // Función para calcular el total de la compra
-  const total = cart.reduce((acc, item) => acc + item.price, 0);
-
   return (
-  <div>
-    <div className="container">
-      <div className="products-container">
-        <h2 style={{ fontSize: '40px', marginLeft: '30px' }}>Productos disponibles</h2>
-        <div className="products">
-          {products.map((product) => (
-            <div key={product.id} className="product">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>Precio: ${product.price}</p>
-              <button onClick={() => addToCart(product)}>Agregar al carrito</button>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="cart">
-        <h2>Carrito de compras</h2>
-        <ul>
-          {cart.map((item, index) => (
-            <li key={index}>
-              {item.name} - ${item.price} 
-              <button onClick={() => removeFromCart(index)}>Eliminar</button>
-            </li>
-          ))}
-        </ul>
-        <h2>Total de la compra: ${total}</h2>
+    <div>
+    <div className="shopping-page">
+      <h2>¡Aqui hay algunas paginas que te recomendamos para que puedas reabastecer tu armario!</h2>
+      <div className="category-links">
+        <Link to="https://www.amazon.com.mx/moda" className="category-link">
+          <img src={amazonImage} alt="Amazon" />
+          Amazon Moda
+        </Link>
+        <Link to="https://www.zara.com/co/" className="category-link">
+          <img src={zaraImage} alt="Zara" />
+          Zara
+        </Link>
+        <Link to="https://co.hm.com/" className="category-link">
+          <img src={hmImage} alt="H&M" />
+          H&M
+        </Link>
+        <Link to="https://shop.mango.com/co" className="category-link">
+          <img src={mangoImage} alt="Mango" />
+          Mango
+        </Link>
+        <Link to="https://www.asos.com/?xaffid=17295&r=1" className="category-link">
+          <img src={asosImage} alt="Asos" />
+          Asos
+        </Link>
       </div>
     </div>
     <Footer />
-  </div>
+    </div>
   );
 }
 
