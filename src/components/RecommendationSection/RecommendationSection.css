@@ -1,0 +1,134 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title{
+    height: 550px;
+    justify-content: center;
+    background-color: #cfcccc;
+}
+
+.bodyReco{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cfcccc;
+    /*background-color: #efefef;*/
+}
+.slide-container{
+    /*max-width: 1120px;
+    width: 100%;
+    background-color: gray;
+    padding: 40px 0;
+    */
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.slide-contentReco{
+    margin: 0 40px;
+}
+
+.cardReco{
+    width: 320;
+    border-radius: 25px;
+    background-color: #fff;
+    position: center;
+}
+
+.image-content,
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content{
+    position: relative;
+    row-gap: 5px;
+    padding: 50px 0;
+    width: 200px;
+}
+
+.overlayReco{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0px 25px ;
+}
+
+.overlayReco::before,
+.overlayReco::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #4070f4;
+}
+
+.overlayReco::after{
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+.card-imageReco{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+}
+
+.card-imageReco .card-imgReco{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+
+.nameReco{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.descriptionReco{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+
+.buttonReco{
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttonReco:hover{
+    background: #265DF2;
+}

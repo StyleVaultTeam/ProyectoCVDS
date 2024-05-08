@@ -1,20 +1,99 @@
 import React from 'react';
+import '../RecommendationSection/RecommendationSection.css'
+import Silvia from '../RecommendationSection/SilviaTcherassi.jpeg'
+import AmeliaToro from '../RecommendationSection/AmeliaToro.png' 
+import CarolinaHerrera from '../RecommendationSection/carolinaHerrera.png' 
+
+
 function RecommendationSection() {
     return (
-        <div class="row">
-            <div class="card" style={{ width: '13rem' }}>
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
-                <div class="card-body">
-                    <a href="https://www.instagram.com/franklinramostoscano/?hl=es" class="btn btn-primary">Franklin Ramos</a>
-                </div>
-            </div>
+        <div>
+            
+            <body className='bodyReco'>
+                    <div className='title'>
+                        <h1>Consejos de Moda de expertos</h1>
+                    </div>
+                <div className='slide-container '>
+                    <div className='slide-contentReco'>
+                        <div className='card-wrapper '>
+                            <div className='cardReco'>
 
-            <div class="card" style={{ width: '13rem' }}>
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
-                <div class="card-body">
-                    <a href="https://www.instagram.com/franklinramostoscano/?hl=es" class="btn btn-primary">Franklin Ramos</a>
+                                <div className='image-content'>
+                                    <span className='overlayReco'></span>
+
+                                    <div className='card-imageReco'>
+                                        <img src={Silvia} alt='' className='card-imgReco' />
+                                    </div>
+                                </div>
+
+                                <div className='card-content'>
+                                    <h2 className='nameReco'>Silvia Tcherassi</h2>
+                                    <p className='descriptionReco'>Diseñadora</p>
+
+                                    <div class="card-body">
+                                        <a href="https://co.silviatcherassi.com/blogs/news" class="btn btn-primary">Ver mas</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className='slide-contentReco'>
+                        <div className='card-wrapper '>
+                            <div className='cardReco'>
+
+                                <div className='image-content'>
+                                    <span className='overlayReco'></span>
+
+                                    <div className='card-imageReco'>
+                                        <img src={AmeliaToro} alt='' className='card-imgReco' />
+                                    </div>
+                                </div>
+
+                                <div className='card-content'>
+                                    <h2 className='nameReco'>Amelia Toro</h2>
+                                    <p className='descriptionReco'>Diseñadora</p>
+
+                                    <div class="card-body">
+                                        <a href="https://www.instagram.com/ameliatoro/" class="btn btn-primary">Ver mas</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className='slide-contentReco'>
+                        <div className='card-wrapper '>
+                            <div className='cardReco swiper-slide'>
+
+                                <div className='image-content'>
+                                    <span className='overlayReco'></span>
+
+                                    <div className='card-imageReco'>
+                                        <img src={CarolinaHerrera} alt='' className='card-imgReco' />
+                                    </div>
+                                </div>
+
+                                <div className='card-content'>
+                                    <h2 className='nameReco'>Carolina Herrera</h2>
+                                    <p className='descriptionReco'>Marca</p>
+
+                                    <div class="card-body">
+                                        <a href="https://acortar.link/knqUQh" class="btn btn-primary">Ver mas</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
+            </body>
         </div>
     );
 
