@@ -11,6 +11,7 @@ function PhotoUploadScreen() {
   const handleUserInputChange = (event) => {
     setSelectedUser(event.target.value);
   };
+  
   const handletypeClotheInputChange = (event) => {
     setselectedTypeclothe(event.target.value);
   };
@@ -44,7 +45,7 @@ function PhotoUploadScreen() {
     setIsUploading(true);
     setUploadError(null);
 
-    if (!selectedUser || !selectedFile || !base64String||!selectedTypeclothe) {
+    if (!selectedFile || !base64String || !selectedTypeclothe) {
       setUploadError('Ingresa todos los datos.');
       setIsUploading(false);
       return;
@@ -59,9 +60,18 @@ function PhotoUploadScreen() {
     console.log('JSON data to be sent:', JSON.stringify(photosByUser)); // Log the JSON data
 
     try {
+      console.log(document.cookie);
+
+      const authToken = document.cookie.replace(/(?:(?:^|.*;\s*)authToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
+
       const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+          'Cookie': document.cookie // Incluir la cookie en el encabezado Cookie
+        },
         body: JSON.stringify(photosByUser),
       });
 
@@ -69,7 +79,7 @@ function PhotoUploadScreen() {
         setSelectedUser('');
         setSelectedFile(null);
         setBase64String('');
-        selectedTypeclothe('');
+        setselectedTypeclothe('');
         setIsUploading(false);
       } else {
         const errorData = await response.json();
@@ -87,7 +97,7 @@ function PhotoUploadScreen() {
     <div>
       <h1>Upload Photo</h1>
       <form onSubmit={(event) => event.preventDefault()}>
-        <label htmlFor="username">Usario:</label>
+        <label htmlFor="username">Usuario:</label>
         <input
           type="text"
           id="username"
@@ -110,12 +120,12 @@ function PhotoUploadScreen() {
         {base64String && (
           <div>
             <p>Preview:</p>
-            <img src={base64String} alt="Selected " />
+            <img src={base64String} alt="Selected" />
           </div>
         )}
         {uploadError && <p className="error">{uploadError}</p>}
         <button type="button" disabled={isUploading} onClick={handleUpload}>
-          {isUploading ? 'Uploading...' : 'Subir'}
+          {isUploading ? 'Subiendo...' : 'Subir'}
         </button>
       </form>
     </div>
