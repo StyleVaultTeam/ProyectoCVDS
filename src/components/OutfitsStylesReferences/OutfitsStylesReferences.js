@@ -221,7 +221,6 @@ function OutfitsStylesReferences (){
                                         <a href="#slider3" className="button" id="button3"> </a>
                                     </div>
                                 </div>
-
                             </div>
                         </TabPane>
 
