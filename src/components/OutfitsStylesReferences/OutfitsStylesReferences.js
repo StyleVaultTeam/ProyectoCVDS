@@ -112,8 +112,8 @@ function OutfitsStylesReferences (){
                                         <img src={Funeral3} alt="" className="outfitImg" id="img24" />
                                         <a href="#slider24" className="button" id="button24"></a>
                                     </div>
-                                    <div className="buttonRef">
-                                        <a href="https://acortar.link/hxBkVS" >Ver mas</a>
+                                    <div className="card-bodyRef">
+                                        <a href="https://acortar.link/hxBkVS" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
@@ -139,8 +139,8 @@ function OutfitsStylesReferences (){
                                         <img src={Sport3} alt="" className="outfitImg" id="img21" />
                                         <a href="#slider21" className="button" id="button21"> </a>
                                     </div>
-                                    <div className="buttonRef">
-                                        <a href="https://co.pinterest.com/pin/744993963372368304/" >Ver mas</a>
+                                    <div className="card-bodyRef">
+                                        <a href="https://co.pinterest.com/pin/744993963372368304/" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
@@ -166,8 +166,8 @@ function OutfitsStylesReferences (){
                                         <img src={matrimonio3} alt="" className="outfitImg" id="img18" />
                                         <a href="#slider18" className="button" id="button18"> </a>
                                     </div>
-                                    <div className="buttonRef">
-                                        <a href="https://co.pinterest.com/search/pins/?q=outfit%20matrimonio&rs=typed" >Ver mas</a>
+                                    <div className="card-bodyRef">
+                                        <a href="https://co.pinterest.com/search/pins/?q=outfit%20matrimonio&rs=typed" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
@@ -193,8 +193,8 @@ function OutfitsStylesReferences (){
                                         <img src={oficina3} alt="" className="outfitImg" id="img15" />
                                         <a href="#slider15" className="button" id="button15"> </a>
                                     </div>
-                                    <div className="buttonRef">
-                                        <a href="https://co.pinterest.com/search/pins/?q=outfit%20oficina&rs=typed" >Ver mas</a>
+                                    <div className="card-bodyRef">
+                                        <a href="https://co.pinterest.com/search/pins/?q=outfit%20oficina&rs=typed" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
