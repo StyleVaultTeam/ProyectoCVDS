@@ -1,19 +1,21 @@
 {
-  "jsx-a11y/anchor-is-valid": [
-    "off",
-    {
-      "components": [
-        "Link"
-      ],
-      "specialLink": [
-        "hrefLeft",
-        "hrefRight"
-      ],
-      "aspects": [
-        "noHref",
-        "invalidHref",
-        "preferButton"
-      ]
-    }
-  ]
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "off",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "noHref",
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ]
+  }
 }
