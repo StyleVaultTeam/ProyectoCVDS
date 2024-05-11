@@ -7,6 +7,12 @@ const ImageGallery = ({ userName }) => {
     const [inputUserName, setInputUserName] = useState('');
 
     const getPhotosByUserName = async () => {
+        // Verificar si el documento de la cookie está vacío
+        if (!document.cookie) {
+            window.location.href = '/'; // Redirigir a la página principal
+            return;
+        }
+    
         setIsLoading(true);
         try {
             const response = await fetch(`https://appcvds2.azurewebsites.net/api/photos/${inputUserName}`);
@@ -23,7 +29,7 @@ const ImageGallery = ({ userName }) => {
             setIsLoading(false);
         }
     };
-
+    
     const handleInputChange = (event) => {
         setInputUserName(event.target.value);
     };
