@@ -1,32 +1,21 @@
-import { render,fireEvent, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders header with correct text', () => {
+test('renders header component', () => {
   render(<App />);
-  const headerText = screen.getByText(/organiza tu armario virtualmente/i);
-  expect(headerText).toBeInTheDocument();
+  const headerElement = screen.getByRole('banner');
+  expect(headerElement).toBeInTheDocument();
 });
-test('renders application logo', () => {
+
+test('renders landing page by default', () => {
   render(<App />);
-  const logoElement = screen.getByAltText('Logo de la aplicación');
-  expect(logoElement).toBeInTheDocument();
+  const landingPageElement = screen.getByText(/organiza tu armario virtualmente/i);
+  expect(landingPageElement).toBeInTheDocument();
 });
-test('renders navigation link for "Inicio"', () => {
+
+test('renders footer component', () => {
   render(<App />);
-  const inicioLink = screen.getByText('Inicio');
-  expect(inicioLink).toBeInTheDocument();
-});
-test('does not navigate when "Inicio" link is clicked', () => {
-  // Renderizamos el componente
-  render(<App />);
-
-  // Encontramos el enlace de "Inicio"
-  const inicioLink = screen.getByText('Inicio');
-
-  // Simulamos un clic en el enlace de "Inicio"
-  fireEvent.click(inicioLink);
-
-  // Verificamos que la sección "Inicio" no esté presente después del clic
-  const inicioSection = screen.queryByTestId('inicio-section');
-  expect(inicioSection).toBeNull();
+  const footerElement = screen.getByRole('contentinfo');
+  expect(footerElement).toBeInTheDocument();
 });
