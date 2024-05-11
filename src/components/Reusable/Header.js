@@ -8,7 +8,7 @@ function Header({navigateToLogin}) {
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <a className="navbar-brand" href="/#">
-            <img src={logo} alt="Bootstrap" width="140" height="74" />
+            <img src={logo} alt="Bootstrap" width="200" height="120" />
           </a>
 
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -22,9 +22,6 @@ function Header({navigateToLogin}) {
 
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <a className="nav-link mx-lg-2 active" aria-current="page" href="#inicio">Home</a>
-                </li>
                 <li className="nav-item">
                   <a className="nav-link mx-lg-2" href="/#como-funciona">Cómo Funciona</a>
                 </li>
@@ -54,7 +51,6 @@ function Header({navigateToLogin}) {
           </div>
         </div>
       </nav>
-
     </header>
   );
 }

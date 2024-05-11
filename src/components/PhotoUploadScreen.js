@@ -45,7 +45,7 @@ function PhotoUploadScreen() {
     setIsUploading(true);
     setUploadError(null);
 
-    if (!selectedFile || !base64String || !selectedTypeclothe) {
+    if (!selectedFile || !base64String||!selectedTypeclothe) {
       setUploadError('Ingresa todos los datos.');
       setIsUploading(false);
       return;
@@ -61,20 +61,18 @@ function PhotoUploadScreen() {
 
     try {
       console.log(document.cookie);
-
       const authToken = document.cookie.replace(/(?:(?:^|.*;\s*)authToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
 
       const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-          'Cookie': document.cookie // Incluir la cookie en el encabezado Cookie
-        },
-        body: JSON.stringify(photosByUser),
-      });
-
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': `authToken=${authToken}` // Include authToken cookie in the request
+      },
+      body: JSON.stringify(photosByUser),
+    });
+      
       if (response.ok) {
         setSelectedUser('');
         setSelectedFile(null);
@@ -105,7 +103,7 @@ function PhotoUploadScreen() {
           onChange={handleUserInputChange}
           required
         />
-        <label htmlFor="typClohe">Tipo de ropa:</label>
+        <label htmlFor="typeClothe">Tipo de ropa:</label>
         <input
           type="text"
           id="typeClothe"
