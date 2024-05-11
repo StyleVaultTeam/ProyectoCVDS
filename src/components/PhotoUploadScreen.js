@@ -56,22 +56,25 @@ function PhotoUploadScreen() {
       typeClothe: selectedTypeclothe,
       photo64: base64String, // Base64-encoded image data
     };
+    const authToken = document.cookie;
+    const headers = {
+      'Content-Type': 'application/json',
+      'Cookie': document.cookie,
+      'Authorization': authToken
+    };
 
     console.log('JSON data to be sent:', JSON.stringify(photosByUser)); // Log the JSON data
 
     try {
       console.log(document.cookie);
-      const authToken = document.cookie.replace(/(?:(?:^|.*;\s*)authToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
 
       const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
       method: 'POST',
       credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-        'Cookie': `authToken=${authToken}` // Include authToken cookie in the request
-      },
-      body: JSON.stringify(photosByUser),
+      headers: headers,
+      body: JSON.stringify(photosByUser)
     });
+
       
       if (response.ok) {
         setSelectedUser('');

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { FaUser, FaLock, FaEyeSlash, FaEye} from "react-icons/fa";
+import { FaUser, FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
 const LoginForm = () => {
     const [action, setAction] = useState('login');
@@ -53,6 +53,8 @@ const LoginForm = () => {
             if (response.ok) {
                 const { token } = await response.json();
                 document.cookie = `authToken=${token}`;
+                // Redirige al usuario después del inicio de sesión
+                window.location.href = '/main';
             } else {
                 if (response.status === 403) {
                     setErrorMessage('CONTRASEÑA INCORRECTA');
@@ -88,7 +90,7 @@ const LoginForm = () => {
 
                 if (response.ok) {
                     console.log('Usuario registrado exitosamente.');
-                    // Redirigir a la página principal u otra página de éxito
+                    // Redirige a la página principal u otra página de éxito
                 } else {
                     // Manejar otros casos de respuesta
                 }
@@ -118,6 +120,7 @@ const LoginForm = () => {
                     </div>
                     <button type="submit">Iniciar Sesión</button>
                     <div className="register-link">
+                        {errorMessage && <p className="error-message">{errorMessage}</p>}
                         <p>¿No tienes cuenta?<a href="#" onClick={registerLink}>  Regístrate</a></p>
                     </div>
                 </form>
@@ -127,7 +130,7 @@ const LoginForm = () => {
                 <form onSubmit={handleRegisterSubmit}>
                     <h1>Crear Cuenta</h1>
                     <div className="input-box">
-                        <input type="text" placeholder="Nombre de Usuario" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="text" placeholder="Nombre de Usuario" required value={email} onChange={(e) => setEmail(e.target.value)} />
                         <FaUser className='icon' />
                     </div>
                     <div className="input-box">

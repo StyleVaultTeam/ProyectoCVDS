@@ -9,6 +9,7 @@ import RecommendationSection from './components/RecommendationSection/Recommenda
 import NotFound from './components/NotFound/NotFound'
 import PhotoUploadScreen from './components/PhotoUploadScreen';
 import LoginVault from  './components/LoginForm/LoginVault';
+import Main from  './components/MainComponent';
 import ImageGallery from './components/ChargeImages';
 import CalendarPage from './components/CalendarPage';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="login" element={<LoginVault/>} />
           <Route path="charge" element={<ImageGallery/>} />
           <Route path="calendar" element={<CalendarPage/>} />
+          <Route path="main" element={<Main/>} />
         </Route>
       </Routes>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossOrigin="anonymous"></script>
