@@ -36,14 +36,49 @@ const LoginForm = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
     }
 
-    const handleSubmit = async (event) => {
+    const handleLoginSubmit = async (event) => {
         event.preventDefault();
 
-        if (action === 'login') {
+        const data = { email, password };
+
+        try {
+            const response = await fetch('https://appcvds2.azurewebsites.net/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                const { token } = await response.json();
+                document.cookie = `authToken=${token}`;
+            } else {
+                if (response.status === 403) {
+                    setErrorMessage('CONTRASEÑA INCORRECTA');
+                } else if (response.status === 404) {
+                    setErrorMessage('USUARIO INCORRECTO');
+                } else {
+                    setErrorMessage('Error desconocido');
+                }
+            }
+        } catch (error) {
+            console.error('Error al enviar la solicitud:', error);
+            setErrorMessage('Error de red');
+        }
+    }
+
+    const handleRegisterSubmit = async (event) => {
+        event.preventDefault();
+
+        if (password !== confirmPassword) {
+            setPasswordMatchError('Las contraseñas no coinciden');
+        } else {
+            setPasswordMatchError('');
             const data = { email, password };
 
             try {
-                const response = await fetch('https://appcvds2.azurewebsites.net/api/login', {
+                const response = await fetch('https://appcvds2.azurewebsites.net/api/login/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -52,27 +87,14 @@ const LoginForm = () => {
                 });
 
                 if (response.ok) {
-                    const { token } = await response.json();
-                    document.cookie = `authToken=${token}`;
+                    console.log('Usuario registrado exitosamente.');
+                    // Redirigir a la página principal u otra página de éxito
                 } else {
-                    if (response.status === 403) {
-                        setErrorMessage('CONTRASEÑA INCORRECTA');
-                    } else if (response.status === 404) {
-                        setErrorMessage('USUARIO INCORRECTO');
-                    } else {
-                        setErrorMessage('Error desconocido');
-                    }
+                    // Manejar otros casos de respuesta
                 }
             } catch (error) {
-                console.error('Error al enviar la solicitud:', error);
-                setErrorMessage('Error de red');
-            }
-        } else {
-            if (password !== confirmPassword) {
-                setPasswordMatchError('Las contraseñas no coinciden');
-            } else {
-                setPasswordMatchError('');
-                console.log('Contraseñas coinciden, enviar formulario');
+                console.error('Error al enviar la solicitud de registro:', error);
+                // Manejar errores de red
             }
         }
     }
@@ -80,7 +102,7 @@ const LoginForm = () => {
     return (
         <div className={`wrapper ${action === 'register' ? 'active' : ''}`}>
             <div className={`form-box login ${action === 'register' ? 'active' : ''}`}>
-                <form action="">
+                <form onSubmit={handleLoginSubmit}>
                     <h1>Login</h1>
                     <div className="input-box">
                         <input type="text" placeholder="Usuario" required value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -102,10 +124,10 @@ const LoginForm = () => {
             </div>
 
             <div className={`form-box register ${action === 'register' ? 'active' : ''}`}>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleRegisterSubmit}>
                     <h1>Crear Cuenta</h1>
                     <div className="input-box">
-                        <input type="text" placeholder="Nombre de Usuario" required />
+                        <input type="text" placeholder="Nombre de Usuario" required value={email} onChange={(e) => setEmail(e.target.value)}/>
                         <FaUser className='icon' />
                     </div>
                     <div className="input-box">
