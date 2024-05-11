@@ -22,8 +22,8 @@ const LoginForm = () => {
             });
 
             if (response.ok) {
-                const { token } = await response.json();
-                document.cookie = `authToken=${token}`;
+                const jsonRespones = await response.json();
+                document.cookie = "authToken="+jsonRespones.token;
             } else {
                 if (response.status === 403) {
                     setErrorMessage('CONTRASEÑA INCORRECTA');

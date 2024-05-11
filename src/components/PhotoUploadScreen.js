@@ -11,6 +11,7 @@ function PhotoUploadScreen() {
   const handleUserInputChange = (event) => {
     setSelectedUser(event.target.value);
   };
+  
   const handletypeClotheInputChange = (event) => {
     setselectedTypeclothe(event.target.value);
   };
@@ -44,7 +45,7 @@ function PhotoUploadScreen() {
     setIsUploading(true);
     setUploadError(null);
 
-    if (!selectedUser || !selectedFile || !base64String||!selectedTypeclothe) {
+    if (!selectedFile || !base64String||!selectedTypeclothe) {
       setUploadError('Ingresa todos los datos.');
       setIsUploading(false);
       return;
@@ -59,17 +60,24 @@ function PhotoUploadScreen() {
     console.log('JSON data to be sent:', JSON.stringify(photosByUser)); // Log the JSON data
 
     try {
-      const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(photosByUser),
-      });
+      console.log(document.cookie);
+      const authToken = document.cookie.replace(/(?:(?:^|.*;\s*)authToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
 
+      const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': `authToken=${authToken}` // Include authToken cookie in the request
+      },
+      body: JSON.stringify(photosByUser),
+    });
+      
       if (response.ok) {
         setSelectedUser('');
         setSelectedFile(null);
         setBase64String('');
-        selectedTypeclothe('');
+        setselectedTypeclothe('');
         setIsUploading(false);
       } else {
         const errorData = await response.json();
@@ -77,6 +85,7 @@ function PhotoUploadScreen() {
       }
     } catch (error) {
       console.error('Upload error:', error);
+      setUploadError('An error occurred during upload.');
     } finally {
       setIsUploading(false);
     }
@@ -86,7 +95,7 @@ function PhotoUploadScreen() {
     <div>
       <h1>Upload Photo</h1>
       <form onSubmit={(event) => event.preventDefault()}>
-        <label htmlFor="username">Usario:</label>
+        <label htmlFor="username">Usuario:</label>
         <input
           type="text"
           id="username"
@@ -94,7 +103,7 @@ function PhotoUploadScreen() {
           onChange={handleUserInputChange}
           required
         />
-        <label htmlFor="typClohe">Tipo de ropa:</label>
+        <label htmlFor="typeClothe">Tipo de ropa:</label>
         <input
           type="text"
           id="typeClothe"
@@ -109,12 +118,12 @@ function PhotoUploadScreen() {
         {base64String && (
           <div>
             <p>Preview:</p>
-            <img src={base64String} alt="Selected " />
+            <img src={base64String} alt="Selected" />
           </div>
         )}
         {uploadError && <p className="error">{uploadError}</p>}
         <button type="button" disabled={isUploading} onClick={handleUpload}>
-          {isUploading ? 'Uploading...' : 'Subir'}
+          {isUploading ? 'Subiendo...' : 'Subir'}
         </button>
       </form>
     </div>
