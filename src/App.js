@@ -25,7 +25,7 @@ function App() {
           <Route path="recommendation" element={<RecommendationSection />} />
           <Route path="myCloset" element={<MyCloset />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="uploads" element={<PhotoUploadScreen/>} />
+          <Route path="upload" element={<PhotoUploadScreen/>} />
           <Route path="login" element={<LoginVault/>} />
           <Route path="charge" element={<ImageGallery/>} />
           <Route path="calendar" element={<CalendarPage/>} />
