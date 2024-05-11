@@ -9,7 +9,7 @@ import RecommendationSection from './components/RecommendationSection/Recommenda
 import NotFound from './components/NotFound/NotFound';
 import PhotoUploadScreen from './components/PhotoUploadScreen';
 import LoginVault from './components/LoginForm/LoginVault';
-import Main from './components/MainComponent';
+import Main from './components/Main/MainComponent';
 import ImageGallery from './components/ChargeImages';
 import CalendarPage from './components/CalendarPage';
 import { useNavigate, useLocation } from 'react-router-dom';
