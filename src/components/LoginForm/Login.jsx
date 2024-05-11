@@ -9,6 +9,8 @@ const LoginForm = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
     const [passwordMatchError, setPasswordMatchError] = useState('');
+    const [email, setEmail] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const registerLink = () => {
         setAction('register');
@@ -34,13 +36,44 @@ const LoginForm = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password !== confirmPassword) {
-            setPasswordMatchError('Las contraseñas no coinciden');
+
+        if (action === 'login') {
+            const data = { email, password };
+
+            try {
+                const response = await fetch('https://appcvds2.azurewebsites.net/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const { token } = await response.json();
+                    document.cookie = `authToken=${token}`;
+                } else {
+                    if (response.status === 403) {
+                        setErrorMessage('CONTRASEÑA INCORRECTA');
+                    } else if (response.status === 404) {
+                        setErrorMessage('USUARIO INCORRECTO');
+                    } else {
+                        setErrorMessage('Error desconocido');
+                    }
+                }
+            } catch (error) {
+                console.error('Error al enviar la solicitud:', error);
+                setErrorMessage('Error de red');
+            }
         } else {
-            setPasswordMatchError('');
-            console.log('Contraseñas coinciden, enviar formulario');
+            if (password !== confirmPassword) {
+                setPasswordMatchError('Las contraseñas no coinciden');
+            } else {
+                setPasswordMatchError('');
+                console.log('Contraseñas coinciden, enviar formulario');
+            }
         }
     }
 
@@ -50,11 +83,11 @@ const LoginForm = () => {
                 <form action="">
                     <h1>Login</h1>
                     <div className="input-box">
-                        <input type="text" placeholder="Usuario" required />
+                        <input type="text" placeholder="Usuario" required value={email} onChange={(e) => setEmail(e.target.value)} />
                         <FaUser className='icon' />
                     </div>
                     <div className="input-box">
-                        <input type="password" placeholder="Contraseña" required />
+                        <input type="password" placeholder="Contraseña" required value={password} onChange={handlePasswordChange} />
                         <FaLock className='icon' />
                     </div>
 
