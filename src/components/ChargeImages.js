@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Importa Axios para realizar solicitudes HTTP
 
 const ImageGallery = ({ userName }) => {
   const [photos, setPhotos] = useState([]);
@@ -10,17 +9,20 @@ const ImageGallery = ({ userName }) => {
   const getPhotosByUserName = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`https://appcvds2.azurewebsites.net/api/photos/${inputUserName}`);
-      console.log('Response data:', response.data,inputUserName); // Muestra el JSON en la consola
-      setPhotos(response.data);
+      const response = await fetch(`https://appcvds2.azurewebsites.net/api/photos/${inputUserName}`);
+      if (!response.ok) {
+        throw new Error('Error fetching photos');
+      }
+      const data = await response.json();
+      console.log('Response data:', data, inputUserName); // Muestra el JSON en la consola
+      setPhotos(data);
       setError(null);
     } catch (error) {
-      setError('Error fetching photos');
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
   };
-  
 
   const handleInputChange = (event) => {
     setInputUserName(event.target.value);
@@ -37,7 +39,7 @@ const ImageGallery = ({ userName }) => {
         onChange={handleInputChange}
         placeholder="Enter username..."
       />
-      <button onClick={() => getPhotosByUserName(inputUserName)}>Get Photos</button>
+      <button onClick={getPhotosByUserName}>Get Photos</button>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <div className="image-grid">
