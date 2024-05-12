@@ -17,7 +17,7 @@ const ImageGallery = () => {
     
         setIsLoading(true);
         try {
-            const response = await fetch(`https://appcvds2.azurewebsites.net/api/photos/${inputUserName}`);
+            const response = await fetch(`http://localwebapp:8080/api/photos/${inputUserName}`);
             if (!response.ok) {
                 throw new Error('Error fetching photos');
             }

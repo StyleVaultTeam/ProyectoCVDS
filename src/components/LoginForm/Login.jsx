@@ -42,19 +42,20 @@ const LoginForm = () => {
         const data = { email, password };
 
         try {
-            const response = await fetch('https://appcvds2.azurewebsites.net/api/login', {
+            const response = await fetch('http://localwebapp:8080/api/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                credentials: 'include'
             });
 
             if (response.ok) {
                 const { token } = await response.json();
-                document.cookie = `authToken=${token}`;
+                //document.cookie = `authToken=${token}`;
                 // Redirige al usuario después del inicio de sesión
-                window.location.href = '/main';
+                //window.location.href = '/main';
             } else {
                 if (response.status === 403) {
                     setErrorMessage('CONTRASEÑA INCORRECTA');
@@ -80,7 +81,7 @@ const LoginForm = () => {
             const data = { email, password };
 
             try {
-                const response = await fetch('https://appcvds2.azurewebsites.net/api/login/register', {
+                const response = await fetch('http://localwebapp:8080/api/login/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

@@ -68,7 +68,7 @@ function PhotoUploadScreen() {
     try {
       console.log(document.cookie);
 
-      const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
+      const response = await fetch('http://localwebapp:8080/api/photos', {
       method: 'POST',
       credentials: 'include',
       headers: headers,
