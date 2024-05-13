@@ -59,7 +59,7 @@ function PhotoUploadScreen() {
     const authToken = document.cookie;
     const headers = {
       'Content-Type': 'application/json',
-      'Cookie': document.cookie,
+      'Set-cookie': document.cookie,
       'Authorization': authToken
     };
 

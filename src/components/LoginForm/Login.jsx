@@ -45,14 +45,16 @@ const LoginForm = () => {
             const response = await fetch('https://appcvds2.azurewebsites.net/api/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                credentials: 'include'
             });
 
             if (response.ok) {
-                const { token } = await response.json();
-                document.cookie = `authToken=${token}`;
+                const {token} = await response.json(); // Supongo que el token está en el cuerpo de la respuesta JSON
+                document.cookie = `authToken =${token}`;
+    
                 // Redirige al usuario después del inicio de sesión
                 window.location.href = '/main';
             } else {

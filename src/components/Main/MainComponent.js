@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ImageGallery.css'; // Archivo CSS para los estilos
 
 const ImageGallery = () => {
-    const [photos, setPhotos] = useState([]);
+    const [responseText, setResponseText] = useState('');
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [inputUserName, setInputUserName] = useState('');
@@ -17,13 +17,20 @@ const ImageGallery = () => {
     
         setIsLoading(true);
         try {
-            const response = await fetch(`https://appcvds2.azurewebsites.net/api/photos/${inputUserName}`);
+            const response = await fetch('https://appcvds2.azurewebsites.net/api/login/username', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include'
+            });
             if (!response.ok) {
-                throw new Error('Error fetching photos');
+                throw new Error('Error fetching response');
             }
-            const data = await response.json();
-            console.log('Response data:', data, inputUserName); // Muestra el JSON en la consola
-            setPhotos(data);
+            const responseData = await response.json(); // Convertir la respuesta a JSON
+            console.log('Response data:', responseData); // Muestra el JSON en la consola
+            const name = responseData.name; // Extraer el valor de "name" del JSON
+            setResponseText(name); // Guardar el valor de "name" en el estado
             setError(null);
         } catch (error) {
             setError(error.message);
@@ -53,13 +60,12 @@ const ImageGallery = () => {
             </div>
             {isLoading && <p className="loading-message">Loading...</p>}
             {error && <p className="error-message">{error}</p>}
-            <div className="image-grid">
-                {photos.map((photo, index) => (
-                    <div key={index} className="image-item">
-                        <img src={photo.photo64} alt={` ${index + 1}`} className="gallery-image" />
-                        <p className="image-description">Type of Clothe: {photo.typeclothe}</p>
-                    </div>
-                ))}
+            <div className="response-text">
+                {responseText ? (
+                    <p>{responseText}</p>
+                ) : (
+                    <p>No response yet</p>
+                )}
             </div>
             <Link to="/calendar" className="calendar-link">
                 <button className="calendar-button">Go to Calendar</button>
