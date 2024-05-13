@@ -38,6 +38,27 @@ const ImageGallery = () => {
             setIsLoading(false);
         }
     };
+
+    const handleLogout = async () => {
+        setIsLoading(true);
+        try {
+            const response = await fetch('https://appcvds2.azurewebsites.net/api/login/logout', {
+                method: 'POST',
+                credentials: 'include'
+            });
+            if (!response.ok) {
+                throw new Error('Error logging out');
+            }
+            // Limpiar la cookie de autenticación
+            document.cookie = "authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            // Redirigir a la página de login
+            window.location.href = '/login'
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
     
     const handleInputChange = (event) => {
         setInputUserName(event.target.value);
@@ -67,6 +88,7 @@ const ImageGallery = () => {
                     <p>No response yet</p>
                 )}
             </div>
+            <button onClick={handleLogout} className="logout-button">Logout</button>
             <Link to="/calendar" className="calendar-link">
                 <button className="calendar-button">Go to Calendar</button>
             </Link>
