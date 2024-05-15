@@ -26,6 +26,12 @@ const ImageGallery = () => {
     }, [userName]);
 
     const getPhotosByUserName = async () => {
+        // Verificar si el documento de la cookie está vacío
+        if (!document.cookie) {
+            window.location.href = '/login'; // Redirigir a la página principal
+            return;
+        }
+    
         setIsLoading(true);
         try {
             const response = await fetch(`https://appcvds2.azurewebsites.net/api/photos/${userName}`, {
@@ -52,7 +58,7 @@ const ImageGallery = () => {
     const getUserName = async () => {
         // Verificar si la cookie está vacía
         if (!document.cookie) {
-            window.location.href = '/'; // Redirigir a la página principal
+            window.location.href = '/login'; // Redirigir a la página principal
             return;
         }
 
