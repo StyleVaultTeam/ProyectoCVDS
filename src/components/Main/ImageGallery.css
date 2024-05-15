@@ -24,62 +24,58 @@
     font-size: 16px;
 }
 
-.get-photos-button {
-    padding: 8px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.get-photos-button:hover {
-    background-color: #0056b3;
-}
-
 .loading-message, .error-message {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-.image-grid {
+.photo-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuye las imágenes en columnas */
+    gap: 20px; /* Espacio entre imágenes */
 }
 
-.image-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #f9f9f9;
+.photo {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    border-radius: 5px; /* Agrega bordes redondeados */
 }
 
-.gallery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.photo-shirt {
+    height: 200px; /* Establece una altura fija para las camisas */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
 }
 
-.image-description {
-    margin-top: 10px;
+.photo-pants {
+    height: 300px; /* Establece una altura fija para los pantalones */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
 }
 
-.calendar-link {
-    display: block;
+
+.logout-button, .calendar-button, .upload-button {
     margin-top: 20px;
-    text-align: center;
-}
-
-.calendar-button {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #28a745;
+    background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
 }
+.gallery-image {
+    width: 25%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    max-height: 300px; /* Establece una altura máxima para las imágenes */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
+}
 
-.calendar-button:hover {
-    background-color: #218838;
+
+.logout-button:hover, .calendar-button:hover, .upload-button:hover {
+    background-color: #0056b3;
+}
+
+.calendar-link, .upload-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
 }
