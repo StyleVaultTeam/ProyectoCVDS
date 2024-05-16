@@ -29,26 +29,14 @@
     margin-bottom: 20px;
 }
 
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuye las imágenes en columnas */
-    gap: 20px; /* Espacio entre imágenes */
+.slider-container {
+    margin-bottom: 20px; /* Reduce el margen inferior del contenedor del slider */
 }
 
-.photo {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
-    border-radius: 5px; /* Agrega bordes redondeados */
-}
-
-.photo-shirt {
-    height: 200px; /* Establece una altura fija para las camisas */
-    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
-}
-
-.photo-pants {
-    height: 300px; /* Establece una altura fija para los pantalones */
-    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
+.pantalon-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 
@@ -60,15 +48,9 @@
     color: white;
     border: none;
     cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
-.gallery-image {
-    width: 25%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
-    border-radius: 5px; /* Agrega bordes redondeados */
-    max-height: 300px; /* Establece una altura máxima para las imágenes */
-    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo la proporción */
-}
-
 
 .logout-button:hover, .calendar-button:hover, .upload-button:hover {
     background-color: #0056b3;
