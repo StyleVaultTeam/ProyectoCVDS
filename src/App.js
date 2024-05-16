@@ -30,7 +30,7 @@ function AppRoutes() {
   const location = useLocation();
 
   useEffect(() => {
-    if (document.cookie === '' && location.pathname === '/main') {
+    if (document.cookie === '' && (location.pathname === '/main'||location.pathname === '/upload')) {
       navigate('/login');
     }
   }, [navigate, location.pathname]);
