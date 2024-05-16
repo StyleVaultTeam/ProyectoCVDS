@@ -123,12 +123,12 @@ const ImageGallery = () => {
             </div>
             {isLoading && <p className="loading-message">Loading...</p>}
             {error && <p className="error-message">Error: {error}</p>}
+            <h2 className="pantalon-title">Camiseta</h2>
             <div className="slider-container">
-                <h2>Camisetas</h2>
                 <SliderMain arregloImagenes={camisetas} />
             </div>
+            <h2 className="pantalon-title">Pantalón</h2>
             <div className="slider-container">
-                <h2>Pantalones</h2>
                 <SliderMain arregloImagenes={pantalones} />
             </div>
             <Base64ToImageConverter /> {/* Render the Base64ToImageConverter component */}

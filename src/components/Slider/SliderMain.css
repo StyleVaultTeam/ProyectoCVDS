@@ -10,9 +10,9 @@
 }
 
 .card.item {
-    width: 200px; /* Ancho del contenedor del ítem */
+    width: 100px; /* Ancho del contenedor del ítem */
     height: 200px; /* Altura del contenedor del ítem */
-    margin-right: 1rem; /* Espacio entre los ítems */
+    margin-right: 0.5rem; /* Espacio entre los ítems */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,11 +21,9 @@
 }
 
 .card.item img {
-    min-width: 100%; /* Establece el ancho mínimo de la imagen al 100% del contenedor */
-    min-height: 100%; /* Establece la altura mínima de la imagen al 100% del contenedor */
     max-width: none; /* Elimina el ancho máximo de la imagen */
-    max-height: none; /* Elimina la altura máxima de la imagen */
-    object-fit: cover; /* Escala la imagen para que cubra completamente el contenedor */
-    border-radius: 5px; /* Agrega bordes redondeados */
+    max-height: none;
+    object-fit: contain; /* Escala la imagen para que cubra completamente el contenedor */
+    border-radius: 1px; /* Agrega bordes redondeados */
 }
 

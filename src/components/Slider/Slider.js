@@ -12,10 +12,8 @@ function Slider({ arregloImagenes }) {
                 <motion.div className="slider" drag='x' dragConstraints={{ right: 250 * (arregloImagenes.length / 2), left: -250 * (arregloImagenes.length / 2) }} >
                     {arregloImagenes.map((image, index) => (
                         <motion.div className="card item" style={{ width: "200px" }} key={index}>
-
                         <body>
                             <div className="gallery">
-                                
                                     <img src={image} alt=""></img>
                                     <ul>
                                         <li><i class="fa fa-star checked"></i></li>
@@ -24,9 +22,6 @@ function Slider({ arregloImagenes }) {
                                         <li><i class="fa fa-star checked"></i></li>
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
-                                
-
-
                             </div>
                         </body>
 
