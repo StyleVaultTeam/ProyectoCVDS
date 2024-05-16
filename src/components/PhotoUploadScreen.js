@@ -1,43 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function PhotoUploadScreen() {
-  const [selectedUser, setSelectedUser] = useState('');
-  const [selectedTypeclothe, setselectedTypeclothe] = useState('');
+  const [userName, setUserName] = useState('');
+  const [selectedTypeclothe, setSelectedTypeclothe] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [base64String, setBase64String] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); // Add this line to define isLoading
+  const [responseText, setResponseText] = useState(''); // Add this line to define responseText
 
-  const handleUserInputChange = (event) => {
-    setSelectedUser(event.target.value);
+  useEffect(() => {
+    // Cargar nombre de usuario al montar el componente
+    getUserName();
+  }, []);
+
+  const getUserName = async () => {
+    // Verificar si la cookie está vacía
+    if (!document.cookie) {
+      window.location.href = '/login'; // Redirigir a la página principal
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch('https://appcvds2.azurewebsites.net/api/login/username', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+      if (!response.ok) {
+        throw new Error('Error fetching username');
+      }
+      const responseData = await response.json();
+      const name = responseData.name;
+      setUserName(name);
+      setResponseText(name);
+      setUploadError(null);
+    } catch (error) {
+      setUploadError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
-  
+
   const handletypeClotheInputChange = (event) => {
-    setselectedTypeclothe(event.target.value);
+    setSelectedTypeclothe(event.target.value);
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-  
+
     // Validate file type (optional)
     if (!file.type.match('image/*')) {
       setUploadError('Please select an image file.');
       return;
     }
-  
+
     setSelectedFile(file);
     const reader = new FileReader();
-  
+
     reader.onload = () => {
       const base64 = reader.result;
       setBase64String(base64);
     };
-  
+
     reader.onerror = (error) => {
       console.error('Error reading file:', error);
       setUploadError('Failed to read the selected image.');
     };
-  
+
     reader.readAsDataURL(file);
   };
 
@@ -45,14 +79,14 @@ function PhotoUploadScreen() {
     setIsUploading(true);
     setUploadError(null);
 
-    if (!selectedFile || !base64String||!selectedTypeclothe) {
+    if (!selectedFile || !base64String || !selectedTypeclothe) {
       setUploadError('Ingresa todos los datos.');
       setIsUploading(false);
       return;
     }
 
     const photosByUser = {
-      userName: selectedUser,
+      userName: userName,
       typeClothe: selectedTypeclothe,
       photo64: base64String, // Base64-encoded image data
     };
@@ -60,7 +94,7 @@ function PhotoUploadScreen() {
     const headers = {
       'Content-Type': 'application/json',
       'Set-cookie': document.cookie,
-      'Authorization': authToken
+      'Authorization': authToken,
     };
 
     console.log('JSON data to be sent:', JSON.stringify(photosByUser)); // Log the JSON data
@@ -69,18 +103,16 @@ function PhotoUploadScreen() {
       console.log(document.cookie);
 
       const response = await fetch('https://appcvds2.azurewebsites.net/api/photos', {
-      method: 'POST',
-      credentials: 'include',
-      headers: headers,
-      body: JSON.stringify(photosByUser)
-    });
+        method: 'POST',
+        credentials: 'include',
+        headers: headers,
+        body: JSON.stringify(photosByUser),
+      });
 
-      
       if (response.ok) {
-        setSelectedUser('');
         setSelectedFile(null);
         setBase64String('');
-        setselectedTypeclothe('');
+        setSelectedTypeclothe('');
         setIsUploading(false);
       } else {
         const errorData = await response.json();
@@ -99,21 +131,15 @@ function PhotoUploadScreen() {
       <h1>Upload Photo</h1>
       <form onSubmit={(event) => event.preventDefault()}>
         <label htmlFor="username">Usuario:</label>
-        <input
-          type="text"
-          id="username"
-          value={selectedUser}
-          onChange={handleUserInputChange}
-          required
-        />
+        <span>{userName}</span>
+        <br />
         <label htmlFor="typeClothe">Tipo de ropa:</label>
-        <input
-          type="text"
-          id="typeClothe"
-          value={selectedTypeclothe}
-          onChange={handletypeClotheInputChange}
-          required
-        />
+        <select id="typeClothe" value={selectedTypeclothe} onChange={handletypeClotheInputChange} required>
+          <option value="">Selecciona un tipo de ropa</option>
+          <option value="parte superior">Parte Superior</option>
+          <option value="parte inferior">Parte Inferior</option>
+          <option value="zapatos">Zapatos</option>
+        </select>
         <br />
         <label htmlFor="image">Imagen:</label>
         <input type="file" id="image" accept="image/*" onChange={handleFileChange} />
@@ -121,7 +147,7 @@ function PhotoUploadScreen() {
         {base64String && (
           <div>
             <p>Preview:</p>
-            <img src={base64String} alt="Selected" />
+            <img src={base64String} alt="Selected" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
           </div>
         )}
         {uploadError && <p className="error">{uploadError}</p>}
