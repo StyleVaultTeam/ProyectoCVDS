@@ -43,8 +43,8 @@ const ImageGallery = () => {
             }
             const responseData = await response.json();
             // Filtrar fotos de camisetas y pantalones
-            const camisetasArray = responseData.filter(item => item.typeClothe === 'Camisa');
-            const pantalonesArray = responseData.filter(item => item.typeClothe === 'Pantalon');
+            const camisetasArray = responseData.filter(item => item.typeClothe === 'parte superior');
+            const pantalonesArray = responseData.filter(item => item.typeClothe === 'parte inferior');
             setCamisetas(camisetasArray);
             setPantalones(pantalonesArray);
             setError(null);
@@ -111,23 +111,15 @@ const ImageGallery = () => {
         <div className="image-gallery-container">
             <h1 className="gallery-title">Mi Armario</h1>
             <div className="input-section">
-                <label htmlFor="userNameInput" className="input-label">Username:</label>
-                <input
-                    type="text"
-                    id="userNameInput"
-                    value={responseText}
-                    readOnly
-                    placeholder="Enter username..."
-                    className="input-field"
-                />
+            <h2>Hola! {responseText}</h2>
             </div>
             {isLoading && <p className="loading-message">Loading...</p>}
             {error && <p className="error-message">Error: {error}</p>}
-           
+            <h2 className="pantalon-title">Parte Superior</h2>
             <div className="slider-container">
-                <h2 className="pantalon-title">Camiseta</h2><SliderMain arregloImagenes={camisetas} />
+                <SliderMain arregloImagenes={camisetas} />
             </div>
-            <h2 className="pantalon-title">Pantalón</h2>
+            <h2 className="pantalon-title">Parte Inferior</h2>
             <div className="slider-container">
                 <SliderMain arregloImagenes={pantalones} />
             </div>
