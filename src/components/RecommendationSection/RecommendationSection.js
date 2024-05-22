@@ -3,12 +3,12 @@ import '../RecommendationSection/RecommendationSection.css'
 import Silvia from '../RecommendationSection/SilviaTcherassi.jpeg'
 import AmeliaToro from '../RecommendationSection/AmeliaToro.png' 
 import CarolinaHerrera from '../RecommendationSection/carolinaHerrera.png' 
-
+import Footer from '../Reusable/Footer.js';
 
 function RecommendationSection() {
     return (
         <div>
-            
+        <div>
             <body className='bodyReco'>
                     <div className='title'>
                         <h1>Consejos de Moda de expertos</h1>
@@ -94,6 +94,8 @@ function RecommendationSection() {
 
                 </div>
             </body>
+        </div>
+        <Footer />
         </div>
     );
 

@@ -4,6 +4,7 @@ import Base64ToImageConverter from '../Base64ToImageConverter'; // Importar el c
 import './ImageGallery.css'; // Archivo CSS para los estilos
 import SliderMain from '../Slider/SliderMain';
 import '../Slider/Slider.css';
+import Footer from '../Reusable/Footer.js';
 
 const ImageGallery = () => {
     const [responseText, setResponseText] = useState('');
@@ -107,11 +108,17 @@ const ImageGallery = () => {
         }
     };
 
+    const totalPrendas = camisetas.length + pantalones.length;
+
     return (
+        <div>
         <div className="image-gallery-container">
             <h1 className="gallery-title">Mi Armario</h1>
             <div className="input-section">
             <h2>Hola! {responseText}</h2>
+            </div>
+            <div className="total-prendas">
+                <p>Tienes <span>{totalPrendas}</span> prendas en total.</p>
             </div>
             {isLoading && <p className="loading-message">Loading...</p>}
             {error && <p className="error-message">Error: {error}</p>}
@@ -132,6 +139,8 @@ const ImageGallery = () => {
             <Link to="/upload" className="upload-link">
                 <button className="upload-button">Upload Photos</button>
             </Link>
+        </div>
+        <Footer />
         </div>
     );
 };
