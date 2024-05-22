@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import moment from 'moment';
 import Footer from './Reusable/Footer.js';
@@ -9,12 +9,23 @@ function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [importantDates, setImportantDates] = useState([]);
 
+  // Cargar fechas importantes de localStorage al montar el componente
+  useEffect(() => {
+    const savedDates = JSON.parse(localStorage.getItem('importantDates')) || [];
+    setImportantDates(savedDates.map(date => new Date(date)));
+  }, []);
+
+  // Guardar fechas importantes en localStorage cuando cambien
+  useEffect(() => {
+    localStorage.setItem('importantDates', JSON.stringify(importantDates));
+  }, [importantDates]);
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
   const handleAddImportantDate = () => {
-    if (selectedDate && !importantDates.includes(selectedDate)) {
+    if (selectedDate && !importantDates.some(date => date.toDateString() === selectedDate.toDateString())) {
       setImportantDates([...importantDates, selectedDate]);
     }
   };
@@ -25,9 +36,6 @@ function CalendarPage() {
   };
 
   const tileClassName = ({ date }) => {
-    if (selectedDate && selectedDate.toDateString() === date.toDateString()) {
-      return 'selected-date';
-    }
     if (importantDates.some((importantDate) => importantDate.toDateString() === date.toDateString())) {
       return 'important-date';
     }
@@ -39,22 +47,22 @@ function CalendarPage() {
 
   return (
     <div>
-    <div className="calendar-container">
-      <h1>Tu Calendario</h1>
-      <div className="calendar-wrapper">
-        <Calendar
-          onChange={handleDateChange}
-          value={selectedDate}
-          className="custom-calendar"
-          tileClassName={tileClassName}
-        />
-        <div className="buttons">
-          <button onClick={handleAddImportantDate}>Agregar fecha importante</button>
-          <button onClick={handleRemoveImportantDate}>Eliminar fecha importante</button>
+      <div className="calendar-container">
+        <h1>Tu Calendario</h1>
+        <div className="calendar-wrapper">
+          <Calendar
+            onChange={handleDateChange}
+            value={selectedDate}
+            className="custom-calendar"
+            tileClassName={tileClassName}
+          />
+          <div className="buttons">
+            <button onClick={handleAddImportantDate}>Agregar fecha importante</button>
+            <button onClick={handleRemoveImportantDate}>Eliminar fecha importante</button>
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </div>
   );
 }

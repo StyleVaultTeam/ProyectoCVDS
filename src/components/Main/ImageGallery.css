@@ -5,8 +5,12 @@
 }
 
 .gallery-title {
-    font-size: 32px;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .input-section {
@@ -33,12 +37,24 @@
     margin-bottom: 20px; /* Reduce el margen inferior del contenedor del slider */
 }
 
-.pantalon-title {
-    font-size: 18px;
+.section-title {
+    font-size: 2rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #444;
+    text-align: center;
+    font-family: 'Verdana', sans-serif; /* Cambia a una fuente que prefieras */
+    position: relative;
 }
 
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff7e5f;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
 
 .logout-button, .calendar-button, .upload-button {
     margin-top: 20px;
@@ -50,6 +66,9 @@
     cursor: pointer;
     display: block;
     margin: 20px auto;
+    border-radius: 5px; /* Agrega bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
 }
 
 .logout-button:hover, .calendar-button:hover, .upload-button:hover {
@@ -60,4 +79,19 @@
     display: block;
     margin-top: 20px;
     text-align: center;
+}
+
+.total-prendas {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.total-prendas span {
+    font-weight: bold;
+    color: #4CAF50;
 }
