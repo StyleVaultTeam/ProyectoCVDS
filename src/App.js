@@ -4,6 +4,8 @@ import ShowLandingPage from './components/ShowLandingPage';
 import ShoppingPage from './components/ShoppingPage';
 import Header from './components/Reusable/Header';
 import MyCloset from './components/MyCloset/MyCloset';
+import Garment from './components/MyGallery/Garment';
+import MyGalery from './components/MyGallery/MyGallery';
 import OutfitsStylesReferences from './components/OutfitsStylesReferences/OutfitsStylesReferences';
 import RecommendationSection from './components/RecommendationSection/RecommendationSection';
 import NotFound from './components/NotFound/NotFound';
@@ -43,6 +45,7 @@ function AppRoutes() {
         <Route path="styles" element={<OutfitsStylesReferences />} />
         <Route path="recommendation" element={<RecommendationSection />} />
         <Route path="myCloset" element={<MyCloset />} />
+        <Route path="Garment" element={<Garment />} />
         <Route path="*" element={<NotFound />} />
         <Route path="upload" element={<PhotoUploadScreen/>} />
         <Route path="login" element={<LoginVault/>} />

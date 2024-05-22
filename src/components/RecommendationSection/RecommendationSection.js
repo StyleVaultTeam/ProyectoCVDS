@@ -68,7 +68,7 @@ function RecommendationSection() {
 
                     <div className='slide-contentReco'>
                         <div className='card-wrapper '>
-                            <div className='cardReco swiper-slide'>
+                            <div className='cardReco'>
 
                                 <div className='image-content'>
                                     <span className='overlayReco'></span>

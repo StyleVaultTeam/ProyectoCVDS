@@ -1,10 +1,10 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+//import 'swiper/css';
+//import 'swiper/css/effect-coverflow';
+//import 'swiper/css/pagination';
+//import 'swiper/css/navigation';
 import '../MyGallery/MyGallery.css';
 import '../Slider/Slider.css';
 
@@ -40,6 +40,9 @@ function App( { arregloImagenes } ) {
                 className="swiper_container"
             >
                 {arregloImagenes.map((image, index) => (
+
+                    <div className="card item" key={index}>
+
                     <SwiperSlide>
                         <img src={image} alt="slide_image" />
                         <ul>
@@ -52,9 +55,11 @@ function App( { arregloImagenes } ) {
                         {/*<button onClick={handleClick}></button>*/}
                         {/*<a className="nav-link mx-lg-2" href="/garment" ></a>*/}
                         {/*<a href="/garment" className="buttonGallery" id="button22"> </a>*/}
-                        
+
                     </SwiperSlide>
+                    </div>
                 ))}
+
             </Swiper>
         </div>
         </div>

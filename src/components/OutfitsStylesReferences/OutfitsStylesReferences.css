@@ -2,7 +2,7 @@
     /*width: auto;
     height: auto;*/
     /*display: flex;*/
-    background: linear-gradient(30deg, rgb(218, 144, 84), rgb(233, 223, 86), rgb(218, 144, 84));
+    background: linear-gradient(30deg, rgb(221, 219, 218), rgb(221, 219, 218), rgb(221, 219, 218));
     align-items: center;
     text-align: center;
     overflow: hidden;
@@ -16,7 +16,7 @@
     flex-direction: row;
     align-items: center;
     overflow: hidden;
-    background: linear-gradient(30deg, rgb(223, 230, 222), rgb(241, 237, 170), rgb(235, 229, 229));
+    background: linear-gradient(30deg, rgb(243, 246, 243), rgb(243, 246, 243), rgb(243, 246, 243));
 }
 
 .imgContainer{
