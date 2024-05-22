@@ -75,7 +75,7 @@ body {
 }
 
 .swiper_container {
-  height: 22rem;
+  height: 24xrem;
   padding: 2rem 0;
   position: center;
 }
@@ -202,4 +202,8 @@ body {
     height: 600px;
     background-color: transparent;
     filter: saturate(100%);
+}
+
+.checked{
+  color: #ff9f43;
 }
