@@ -1,17 +1,10 @@
 
 import React from 'react';
-<<<<<<< HEAD
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-=======
-//import { Swiper, SwiperSlide } from 'swiper/react';
-//import 'swiper/css';
-//import 'swiper/css/pagination';
-//import 'swiper/css/navigation';
->>>>>>> bf53e0c5332126621c5f905707c7bae95d26cf58
 import '../MyGallery/MyGallery.css';
 import '../Slider/Slider.css';
 
