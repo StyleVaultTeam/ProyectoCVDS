@@ -139,15 +139,9 @@ function PhotoUploadScreen() {
           <label htmlFor="typeClothe">Tipo de ropa</label>
           <select id="typeClothe" value={selectedTypeclothe} onChange={handletypeClotheInputChange} required>
             <option value="" disabled>Selecciona un tipo de ropa</option>
-            <optgroup label="Parte Superior">
-              <option value="parte superior"><FaTshirt /> Parte Superior</option>
-            </optgroup>
-            <optgroup label="Parte Inferior">
-              <option value="parte inferior"><PiPantsFill /> Parte Inferior</option>
-            </optgroup>
-            <optgroup label="Zapatos">
-              <option value="zapatos"><GiConverseShoe /> Zapatos</option>
-            </optgroup>
+            <option value="parte superior"><FaTshirt /> Parte Superior</option>
+            <option value="parte inferior"><PiPantsFill /> Parte Inferior</option>
+            <option value="zapatos"><GiConverseShoe /> Zapatos</option>
           </select>
         </div>
         <div className="input-box">
