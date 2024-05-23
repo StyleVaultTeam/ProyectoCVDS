@@ -61,11 +61,14 @@
     font-weight: 700;
     transition: background-color 0.3s ease;
     margin: 15px auto; /* Incrementar el margen y centrar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block; /* Cambiar a inline-block para evitar la línea azul */
+    text-align: center; /* Asegurar que el texto esté centrado */
+    line-height: 50px; /* Alinear el texto verticalmente */
 }
- 
+
+.logout-button:focus, .calendar-button:focus, .upload-button:focus {
+    outline: none; /* Quitar el borde del enfoque si aparece */
+}
 .logout-button:hover, .calendar-button:hover, .upload-button:hover {
     background: linear-gradient(to right, #922B21, #D35400 50%, #F6DDCC);
 }

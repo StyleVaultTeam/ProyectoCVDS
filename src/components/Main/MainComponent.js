@@ -116,7 +116,7 @@ const ImageGallery = () => {
         <div className="image-gallery-container">
             <h1 className="gallery-title">Mi Armario</h1>
             <div className="input-section">
-            <h2>Hola! {responseText}</h2>
+                <h2>Hola! {responseText}</h2>
             </div>
             <div className="total-prendas">
                 <p>Tienes <span>{totalPrendas}</span> prendas en total.</p>
@@ -136,7 +136,7 @@ const ImageGallery = () => {
                 <SliderMain arregloImagenes={zapatos} />
             </div>
             <Base64ToImageConverter /> {/* Render the Base64ToImageConverter component */}
-           
+            
             <button onClick={handleLogout} className="logout-button">Logout</button>
             <Link to="/calendar" className="calendar-link">
                 <button className="calendar-button">Go to Calendar</button>
