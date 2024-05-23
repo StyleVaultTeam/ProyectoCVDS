@@ -30,8 +30,8 @@ function RecommendationSection() {
                                     <h2 className='nameReco'>Silvia Tcherassi</h2>
                                     <p className='descriptionReco'>Diseñadora</p>
 
-                                    <div class="card-body">
-                                        <a href="https://co.silviatcherassi.com/blogs/news" class="btn btn-primary">Ver mas</a>
+                                    <div className="card-body">
+                                        <a href="https://co.silviatcherassi.com/blogs/news" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
@@ -56,8 +56,8 @@ function RecommendationSection() {
                                     <h2 className='nameReco'>Amelia Toro</h2>
                                     <p className='descriptionReco'>Diseñadora</p>
 
-                                    <div class="card-body">
-                                        <a href="https://www.instagram.com/ameliatoro/" class="btn btn-primary">Ver mas</a>
+                                    <div className="card-body">
+                                        <a href="https://www.instagram.com/ameliatoro/" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
@@ -82,8 +82,8 @@ function RecommendationSection() {
                                     <h2 className='nameReco'>Carolina Herrera</h2>
                                     <p className='descriptionReco'>Marca</p>
 
-                                    <div class="card-body">
-                                        <a href="https://acortar.link/knqUQh" class="btn btn-primary">Ver mas</a>
+                                    <div className="card-body">
+                                        <a href="https://acortar.link/knqUQh" className="btn btn-primary">Ver mas</a>
                                     </div>
                                 </div>
 
