@@ -1,84 +1,80 @@
+/* Estilos del contenedor principal de la galería de imágenes */
 .image-gallery-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
-
+ 
+/* Título de la galería */
 .gallery-title {
-    font-size: 2.5rem;
+    font-size: 32px;
     margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
-
+ 
+/* Sección de entrada de usuario */
 .input-section {
     display: flex;
     margin-bottom: 20px;
 }
-
+ 
+/* Etiqueta de entrada */
 .input-label {
     margin-right: 10px;
 }
-
+ 
+/* Campo de entrada */
 .input-field {
     flex-grow: 1;
     padding: 8px;
     font-size: 16px;
 }
-
+ 
+/* Mensajes de carga y error */
 .loading-message, .error-message {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
+ 
+/* Contenedor del slider */
 .slider-container {
     margin-bottom: 20px; /* Reduce el margen inferior del contenedor del slider */
 }
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #444;
-    text-align: center;
-    font-family: 'Verdana', sans-serif; /* Cambia a una fuente que prefieras */
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #ff7e5f;
-    margin: 8px auto 0;
-    border-radius: 2px;
-}
-
-.logout-button, .calendar-button, .upload-button {
-    margin-top: 20px;
-    padding: 10px 20px;
+ 
+/* Título de las secciones de camisetas y pantalones */
+.pantalon-title {
     font-size: 18px;
-    background-color: #007bff;
-    color: white;
+    margin-bottom: 10px;
+    color: #333;
+}
+ 
+.logout-button, .calendar-button, .upload-button {
+    width: 70%; /* Incrementar el ancho de los botones */
+    max-width: 250px; /* Incrementar el ancho máximo para que no se alarguen demasiado */
+    height: 50px; /* Incrementar la altura de los botones */
+    background: linear-gradient(to right, #922B21, #D35400 50%, #F6DDCC);
     border: none;
+    outline: none;
+    border-radius: 50px;
     cursor: pointer;
-    display: block;
-    margin: 20px auto;
-    border-radius: 5px; /* Agrega bordes redondeados */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease; 
+    font-size: 16px; /* Incrementar el tamaño de fuente */
+    color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    margin: 15px auto; /* Incrementar el margen y centrar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+ 
 .logout-button:hover, .calendar-button:hover, .upload-button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #922B21, #D35400 50%, #F6DDCC);
 }
-
+ 
+/* Enlaces de botones */
 .calendar-link, .upload-link {
     display: block;
-    margin-top: 20px;
     text-align: center;
+    width: 100%;
 }
 
 .total-prendas {
