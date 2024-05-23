@@ -75,14 +75,14 @@ body {
 }
 
 .swiper_container {
-  height: 24xrem;
+  height: 24rem;
   padding: 2rem 0;
   position: center;
 }
 
 .swiper-slide {
   width: 17rem;
-  height: 40rem;
+  height: 50rem;
   position: relative;
 }
 
