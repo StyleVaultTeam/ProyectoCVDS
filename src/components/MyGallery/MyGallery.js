@@ -1,14 +1,13 @@
 
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+//import { Swiper, SwiperSlide } from 'swiper/react';
 //import 'swiper/css';
-//import 'swiper/css/effect-coverflow';
 //import 'swiper/css/pagination';
 //import 'swiper/css/navigation';
 import '../MyGallery/MyGallery.css';
 import '../Slider/Slider.css';
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+//import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 import slide_image_1 from "../ImagesClothes/Camiseta_3_Rayas_adidas_Essentials_Azul.png";
 import slide_image_2 from "../ImagesClothes/Camiseta_Rosa_.png";

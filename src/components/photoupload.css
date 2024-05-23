@@ -1,0 +1,131 @@
+.wrapper {
+    position: relative;
+    width: 420px;
+    margin: 100px auto;
+    background: #282c34;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.2s ease;
+  }
+ 
+  form h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+ 
+  .input-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .input-box label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+ 
+  .input-box .username {
+    font-size: 24px; /* Tamaño de la fuente del nombre del usuario */
+    font-weight: bold; /* Negrita para el nombre del usuario */
+    margin-top: 5px;
+  }
+ 
+  .input-box .username-label {
+    font-size: 20px; /* Tamaño de la fuente del nombre del usuario */
+    margin-top: 5px;
+  }
+ 
+  input[type="file"] {
+    display: none;
+  }
+ 
+  label[for="image"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #922b21, #d35400 50%, #f6ddcc);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px; /* Añade margen superior para mover el botón más abajo */
+  }
+ 
+  label[for="image"]:hover {
+    background: linear-gradient(to right, #922b21, #d35400 50%, #f6ddcc);
+  }
+ 
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    appearance: none;
+  }
+ 
+  select optgroup {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+  }
+ 
+  select option {
+    background: #333;
+    color: #fff;
+  }
+ 
+  .preview {
+    margin: 20px 0;
+    text-align: center;
+  }
+ 
+  .preview-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+ 
+  .upload-button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(to right, #922b21, #d35400 50%, #f6ddcc);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px; /* Añade margen superior para mover el botón más abajo */
+  }
+ 
+  .upload-button:hover {
+    background: linear-gradient(to right, #922b21, #d35400 50%, #f6ddcc);
+  }
+ 
+  .error {
+    color: #ff0000;
+    margin-top: 10px;
+    text-align: center;
+  }
