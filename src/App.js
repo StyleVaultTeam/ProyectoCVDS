@@ -5,7 +5,6 @@ import ShoppingPage from './components/ShoppingPage';
 import Header from './components/Reusable/Header';
 import MyCloset from './components/MyCloset/MyCloset';
 import Garment from './components/MyGallery/Garment';
-import MyGalery from './components/MyGallery/MyGallery';
 import OutfitsStylesReferences from './components/OutfitsStylesReferences/OutfitsStylesReferences';
 import RecommendationSection from './components/RecommendationSection/RecommendationSection';
 import NotFound from './components/NotFound/NotFound';
